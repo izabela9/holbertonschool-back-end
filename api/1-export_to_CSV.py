@@ -3,9 +3,9 @@
 Model to export to CSV
 """
 
-import requests
 import csv
 from sys import argv
+import requests
 
 if __name__ == "__main__":
     URL = "https://jsonplaceholder.typicode.com/"
@@ -22,6 +22,8 @@ if __name__ == "__main__":
     total_todos = 0
     for todo in todos_data:
         if todo.get("userId") == user_id:
+            total_todos += 1
+        if todo.get("completed") is True:  
             completed_todos.append(todo)
 
 

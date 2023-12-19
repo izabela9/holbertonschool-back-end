@@ -28,6 +28,6 @@ if __name__ == "__main__":
                 completed_todos.append(todo)
 
     print(f"Employee {user_name} is done", end="")
-    print(f" with tasks ({len(completed_todos)}/{total_todos}):")
+    print(f" with tasks({len(completed_todos)}/{total_todos}):")
     for todo in completed_todos:
         print(f"\t {todo['title']}")

@@ -23,7 +23,6 @@ if __name__ == "__main__":
     for todo in todos_data:
         if todo.get("userId") == user_id:
             total_todos += 1
-        if todo.get("completed") is True:  
             completed_todos.append(todo)
 
 
@@ -32,10 +31,10 @@ if __name__ == "__main__":
     with open(csv_filename, mode='w') as csv_file:
         csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_NONNUMERIC)
 
-    for todo in completed_todos:
-        csv_writer.writerow([f'{user_id}',
-                             f'{user_name}',
-                             f'{todo["completed"]}',
-                             f'{todo["title"]}'])
+        for todo in completed_todos:
+            csv_writer.writerow([f'{user_id}',
+                                 f'{user_name}',
+                                 f'{todo["completed"]}',
+                                 f'{todo["title"]}'])
 # Write csv data
-        print(f"{csv_filename}")
+    print(f"{csv_filename}")
